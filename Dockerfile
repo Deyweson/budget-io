@@ -11,17 +11,11 @@ WORKDIR /usr/src/app
 # Copie os arquivos package.json e package-lock.json para o diretório de trabalho
 COPY package*.json ./
 
-# Ajuste as permissões dos arquivos copiados
-RUN chown -R pptruser:pptruser /usr/src/app
-
-# Troque para o usuário pptruser antes de executar comandos npm
-USER pptruser
-
 # Instale as dependências
 RUN npm ci
 
 # Copie o restante do código do aplicativo para o diretório de trabalho
-COPY --chown=pptruser:pptruser . .
+COPY . .
 
 # Compile o TypeScript para JavaScript usando tsup
 RUN npm run build
