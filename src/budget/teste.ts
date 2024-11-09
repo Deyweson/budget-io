@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+export const test = `
+<html >
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    :root {
-      --default-color: rgba(113, 179, 64, 0.3);
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
 
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100vw;
       box-sizing: border-box;
     }
 
@@ -26,7 +20,7 @@
       height: 150px;
       padding: 10px 20px;
       display: flex;
-      background-color: var(--default-color);
+      background-color: rgba(113, 179, 64, 0.3);
     }
 
     .logo>img {
@@ -49,7 +43,7 @@
     .company-info p {
       width: 230px;
       margin: 0px 10px 0px 20px;
-      text-wrap: wrap;
+      word-wrap: break-word;
     }
 
     .client {
@@ -60,7 +54,7 @@
       display: flex;
       flex-direction: column;
       margin-top: 10px;
-      background-color: var(--default-color);
+      background-color: rgba(113, 179, 64, 0.3);
     }
 
     .client>div {
@@ -69,7 +63,7 @@
     }
 
     .client>div>p {
-      text-wrap: wrap
+      word-wrap: break-word;
     }
 
     .products {
@@ -77,9 +71,9 @@
       margin-top: 10px;
       border-radius: 10px;
       width: 840px;
-      text-wrap: wrap;
+      word-wrap: break-word;
       padding: 5px 0;
-      background-color: var(--default-color);
+      background-color:rgba(113, 179, 64, 0.3);
     }
 
     .products p {
@@ -113,13 +107,12 @@
       width: 842px;
     }
 
-
     .obs>div {
       border-radius: 10px;
       border: 1px solid black;
       width: 500px;
       height: 200px;
-      background-color: var(--default-color);
+      background-color: rgba(113, 179, 64, 0.3);
     }
 
     .totals {
@@ -139,7 +132,7 @@
       height: 50px;
       border: 1px solid black;
       border-radius: 10px;
-      background-color: var(--default-color);
+      background-color: rgba(113, 179, 64, 0.3);
     }
   </style>
 </head>
@@ -175,7 +168,6 @@
   </div>
 
   <div class="products">
-
     <div class="products-header">
       <p style="width: 80px;">Código</p>
       <p style="width: 300px;">Produto / Serviço</p>
@@ -183,7 +175,6 @@
       <p style="width: 100px;">Valor Uni.</p>
       <p style="width: 100px;">Valor Total</p>
     </div>
-
     <div class="products-list" style="background-color: #fff;">
       <p style="min-height: 15px; width: 80px;">Código</p>
       <p style="min-height: 15px; width: 300px; text-align: left;">Notebook teste</p>
@@ -198,32 +189,29 @@
       <p style="min-height: 15px; width: 100px;"></p>
       <p style="min-height: 15px; width: 100px;"></p>
     </div>
-    
   </div>
 
   <div class="footer">
     <div class="obs">
       <p>Observações</p>
       <div>
-
       </div>
     </div>
     <div class="totals">
       <div>
         <p>Total de produtos</p>
         <div>
-
         </div>
       </div>
       <div>
         <p>Valor total</p>
         <div>
-
         </div>
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
+
+`
