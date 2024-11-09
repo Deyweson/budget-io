@@ -1,14 +1,33 @@
+# Use a imagem base de Puppeteer
 FROM ghcr.io/puppeteer/puppeteer:22.9.0
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=TRUE\
+# Defina variáveis de ambiente para o Puppeteer
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
   PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
+# Defina o diretório de trabalho
 WORKDIR /usr/src/app
 
+# Copie os arquivos package.json e package-lock.json para o diretório de trabalho
 COPY package*.json ./
 
+# Ajuste as permissões dos arquivos copiados
+RUN chown -R pptruser:pptruser /usr/src/app
+
+# Troque para o usuário pptruser antes de executar comandos npm
+USER pptruser
+
+# Instale as dependências
 RUN npm ci
 
+# Copie o restante do código do aplicativo para o diretório de trabalho
+COPY --chown=pptruser:pptruser . .
+
+# Compile o TypeScript para JavaScript usando tsup
 RUN npm run build
 
-CMD [ "node" ,"build/server.js" ]
+# Exponha a porta na qual o servidor estará escutando
+EXPOSE 3000
+
+# Comando para iniciar a aplicação
+CMD ["node", "build/server.js"]
