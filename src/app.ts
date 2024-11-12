@@ -7,7 +7,17 @@ import { CreateBudget } from './budget/create'
 import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 
+import cors from '@fastify/cors'
+
 const app = fastify()
+
+app.register(cors, {
+  origin: (origin, cb) => {
+    // Permitir todas as origens (não recomendado para produção)
+    cb(null, true);
+  }
+})
+
 
 app.post('/', async (request, reply) => {
   const data = budgetSchema.parse(request.body)
@@ -36,7 +46,7 @@ app.get('/:id', (request, reply) => {
   const schema = z.object({
     id: z.string()
   })
-  
+
   const { id } = schema.parse(request.params)
 
   const pdfPath = path.join(`./pdf/${id}.pdf`)
