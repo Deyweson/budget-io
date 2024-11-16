@@ -4,9 +4,11 @@ Web service para geração de orçamentos em PDF
 
 ## Rotas
 
-`POST /`
-Rota para gerar o orçamento
-Exemplo de requisição:
+`POST /` Criar PDF
+![post](./doc-img/post.png)
+
+O corpo da requisição precisa ter os seguintes dados.
+
 ```json
 {
   "company": {
@@ -34,7 +36,7 @@ Exemplo de requisição:
   ]
 }
 ```
-Exemplo da resposta:
+Em caso de sucesse a resposta da API sera uma mensagem confirmando a criação e um ID para o download do PDF
 ```json
 {
 	"message": "PDF generated successfully",
@@ -42,6 +44,6 @@ Exemplo da resposta:
 }
 ```
 
-`GET /:id`
-Rota para download do pdf
-A resposta da rota é um pdf referente ao id passado
+`GET /:id` Download do PDF
+A rota precisa que seja passado um ID valido para o download do PDF
+Caso o ID seja invalido a API ira retorna um erro
