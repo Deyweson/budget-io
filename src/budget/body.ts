@@ -1,4 +1,4 @@
-export function budgetBody(style: string, header: string, productsList: string): string {
+export function budgetBody(style: string, header: string, productsList: string, totalProds: number, totalPrice: number, observation?: string) {
   const body = `
     <html>
       <head>
@@ -19,16 +19,18 @@ export function budgetBody(style: string, header: string, productsList: string):
         </div>
         <div class="footer">
           <div class="obs">
-            <p>Observações</p>
-            <div></div>
+            <p>Observações:</p>
+            <div>${observation ? observation : ''}</div>
           </div>
           <div class="totals">
             <div>
               <p>Total de produtos</p>
-            <div></div></div>
+              <div>${totalProds}</div>
+            </div>
             <div>
               <p>Valor total</p>
-            <div></div></div>
+              <div>${totalPrice}</div>
+            </div>
           </div>
         </div>
       </body>

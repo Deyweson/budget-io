@@ -110,9 +110,10 @@ export const style = `
     .obs>div {
       border-radius: 10px;
       border: 1px solid black;
-      width: 500px;
+      width: 470px;
       height: 200px;
       background-color: rgba(113, 179, 64, 0.3);
+      padding: 15px;
     }
 
     .totals {
@@ -133,6 +134,9 @@ export const style = `
       border: 1px solid black;
       border-radius: 10px;
       background-color: rgba(113, 179, 64, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
   `

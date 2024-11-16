@@ -25,7 +25,8 @@ const products = z.array(z.object({
 export const budgetSchema = z.object({
   company,
   client,
-  products
+  products,
+  observation: z.string()
 })
 
 export type Products = z.infer<typeof products>
