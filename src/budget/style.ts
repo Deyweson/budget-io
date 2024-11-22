@@ -2,6 +2,10 @@
 
 export const style = `
   <style type="text/css">
+    :root {
+      --default-color: rgb(234, 234, 234);
+    }
+
     body {
       display: flex;
       flex-direction: column;
@@ -19,7 +23,7 @@ export const style = `
       height: 150px;
       padding: 10px 20px;
       display: flex;
-      background-color: rgba(113, 179, 64, 0.3);
+      background-color: var(--default-color);
     }
 
     .logo>img {
@@ -53,7 +57,7 @@ export const style = `
       display: flex;
       flex-direction: column;
       margin-top: 10px;
-      background-color: rgba(113, 179, 64, 0.3);
+      background-color: var(--default-color);
     }
 
     .client>div {
@@ -72,7 +76,7 @@ export const style = `
       width: 840px;
       word-wrap: break-word;
       padding: 5px 0;
-      background-color: rgba(113, 179, 64, 0.3);
+      background-color: var(--default-color);
     }
 
     .products p {
@@ -112,7 +116,7 @@ export const style = `
       border: 1px solid black;
       width: 470px;
       height: 200px;
-      background-color: rgba(113, 179, 64, 0.3);
+      background-color: var(--default-color);
       padding: 15px;
     }
 
@@ -133,7 +137,7 @@ export const style = `
       height: 50px;
       border: 1px solid black;
       border-radius: 10px;
-      background-color: rgba(113, 179, 64, 0.3);
+      background-color: var(--default-color);
       display: flex;
       align-items: center;
       justify-content: center;
